@@ -1,0 +1,606 @@
+:root {
+    
+    --blanco: white;
+    --blanco-2: rgba(255, 255, 255, .2);
+    --gris: #303030;
+    --gris-f: #757575;
+    --negro: black;
+    --negro-5: rgba(0, 0, 0, 0.5);
+    --negro-7: rgba(0, 0, 0, 0.75);
+    --tipo-titular: 'Playfair Display', serif;
+    --tipo-principal: 'Inter', sans-serif;
+
+}
+
+@media screen and (prefers-color-scheme:light) {
+    :root {
+        --blanco: #181818;
+        --blanco-2: rgba(0, 0, 0, .2);
+        --negro: #e0e0e0;
+        --negro-5: rgba(255, 255, 255, 0.5);
+        --negro-7: rgba(255, 255, 255, 0.75);
+        
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+img,
+figure {
+    max-width: 100%;
+    width: 100%;
+   
+    display: flex;
+    object-fit: cover;
+    object-position: center center;
+    
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    
+    
+    font-size: inherit;
+    cursor: none;
+}
+
+p a {
+    display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+    list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+    scroll-behavior: smooth;
+    min-height: 100%;
+
+}
+
+form,
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    background-color: transparent;
+    display: flex;
+    color: inherit;
+}
+
+body {
+
+    margin: 0px;
+    /* Asegura que no haya márgenes predeterminados */
+    font-family: var(--tipo-principal);
+    font-size: 100%;
+    min-height: 100vh;
+    /* Establece la altura mínima en el 100% del alto de la ventana */
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: none;
+
+}
+
+
+.circulos {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    filter: blur(40px);
+    animation: circulo1 50s linear infinite both;
+}
+
+.circulos .circulo {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    animation: circulo1 50s linear infinite both;
+}
+
+.circulos .circulo1 {
+    top: 0%;
+    left: 0%;
+
+}
+
+.circulos .circulo1 .path {
+    fill: seagreen;
+}
+
+.circulos .circulo2 {
+    top: 0%;
+    right: 0%;
+}
+
+.circulos .circulo2 .path {
+    fill: rgb(111, 0, 155);
+}
+
+.circulos .circulo3 {
+    bottom: 0%;
+    left: 0%;
+}
+
+.circulos .circulo3 .path {
+    fill: rgb(165, 127, 1);
+}
+
+.circulos .circulo4 {
+    bottom: 0%;
+    right: 0%;
+}
+
+.circulos .circulo4 .path {
+    fill: rgb(0, 59, 155);
+}
+
+.header {
+    width: 100%;
+    min-height: 5em;
+    background: lightblue;
+
+    padding: 1em 2em;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    display: none;
+
+}
+
+
+
+
+.header .ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+
+}
+
+.header .li {
+    margin: 0 1em;
+    display: none;
+}
+
+
+.main {
+    background: var(--negro-7);
+    margin: 0 0 1em;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.seccion {
+    width: 100%;
+    min-height: 80vh;
+    padding: 2em;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+}
+
+.seccion .info {
+    font-size: 1.2em;
+    animation: aparecer1 2s ease 1 both;
+
+}
+
+
+.seccion .ul {
+    margin: 2em 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion .ul .li {
+    margin: 0 1em;
+}
+
+/* Estilos para los enlaces <a> */
+.ul .li .a {
+    position: relative;
+    height: 65px;
+    width: 210px;
+    margin: 0 40px;
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+    background: var(--negro);
+    overflow: hidden;
+    transition: 0.6s;
+    text-align: center;
+    line-height: 65px;
+    text-decoration: none;
+    color: inherit;
+    /* Heredar el color de texto */
+    animation: aparecer1 2s ease 1 backwards;
+}
+
+.ul .li .a:hover {
+    cursor: none;
+}
+
+.ul .li .a:before,
+.ul .li .a:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    filter: blur(30px);
+    opacity: 0.4;
+    transition: 0.6s;
+}
+
+.ul .li .a:before {
+    width: 60px;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateX(-130px) skewX(-45deg);
+}
+
+.ul .li .a:after {
+    width: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateX(-130px) skewX(-45deg);
+}
+
+.ul .li .a:hover:before,
+.ul .li .a:hover:after {
+    opacity: 0.6;
+    transform: translateX(320px) skewX(-45deg);
+}
+
+.ul .li .a:hover {
+    color: var(--blanco);
+}
+
+/* Estilos para el primer enlace <a> */
+.ul .li:first-child .a {
+    color: #206592;
+    border-color: #206592;
+    animation-delay: .4s;
+}
+
+.ul .li:first-child .a:hover {
+    background: #206592;
+}
+
+/* Estilos para el segundo enlace <a> */
+.ul .li:last-child .a {
+    color: #ce5c0c;
+    border-color: #ce5c0c;
+    animation-delay: 0.8s;
+}
+
+.ul .li:last-child .a:hover {
+    background: #ce5c0c;
+}
+
+
+
+
+.seccion .h2 {
+    font-family: var(--tipo-titular);
+    font-weight: 600;
+    font-size: 5em;
+    line-height: 1em;
+    color: var(--blanco);
+
+}
+
+/* Front End Developer Text Effect */
+.seccion .h3 {
+    font-family: var(--tipo-titular);
+    font-size: 4.3em;
+    font-weight: 100;
+    /* font-style: italic; */
+}
+
+
+
+.seccion .grid {
+    width: 90%;
+    max-width: 40em;
+    margin: 1em 0;
+
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1em;
+}
+
+.seccion .article {
+    width: 100%;
+    min-height: 20vh;
+    background: lightgoldenrodyellow;
+
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 1em;
+    
+
+
+}
+
+
+
+
+
+.seccion .h4 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(1rem);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--blanco);
+    font-size: 1.8em;
+    font-family: var(--tipo-titular);
+    font-style: italic;
+
+    opacity: 0;
+    transform: translateZ(1) scale(1.5);
+    transition: all .5s ease;
+}
+
+.seccion .article:hover .h4 {
+    opacity: 1;
+    transform: translateZ(1) scale(1);
+}
+
+.works {
+
+    color: var(--blanco);
+}
+
+.works .h2 {
+    margin: 0 0 1rem;
+    color: inherit;
+
+}
+
+.about {}
+
+.about .h2 {
+    margin: 0 0 2rem;
+}
+
+.about .p {
+    max-width: 40rem;
+    margin: 0 0 2rem;
+    font-size: 1.1em;
+    text-align: left;
+
+
+}
+
+.about .rrss {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.about .li {
+    margin: 0 1em;
+}
+
+
+.about .svg {
+    width: 3em;
+    height: 3em;
+}
+
+
+.footer {
+    padding: 2em 0;
+    text-align: center;
+    color: var(--blanco);
+    position: relative;
+    z-index: 2;
+}
+
+.footer .span {
+    display: inline;
+}
+
+.footer span,
+.footer a {
+    display: inline;
+}
+
+
+
+/* Probar escala en 3 */
+@keyframes circulo1 {
+    from {
+        transform: rotate(0deg) scale(2);
+    }
+
+    to {
+        transform: rotate(360deg) scale(2);
+    }
+
+}
+
+@keyframes aparecer1 {
+    from {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+#cursor {
+    width: 5em;
+    height: 5em;
+    background-color: var(--blanco);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    pointer-events: none;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+
+}
+
+#cursor.mini {
+    transform: scale(0.7);
+}
+
+#checkbox {
+    opacity: 0;
+    position: absolute;
+    top: 10px; /* Ajusta la posición superior según tu preferencia */
+    right: 10px; /* Ajusta la posición derecha según tu preferencia */
+    margin-top: 10px; /* Agrega margen superior según tu preferencia */
+    margin-right: 10px; /* Agrega margen derecho según tu preferencia */
+}
+
+.checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    position: absolute;
+    top: 0; /* Ajusta la posición superior según tu preferencia */
+    right: 0; /* Ajusta la posición derecha según tu preferencia */
+    margin-top: 20px; /* Agrega margen superior según tu preferencia */
+    margin-right: 20px; /* Agrega margen derecho según tu preferencia */
+}
+
+
+.fa-moon {
+    color: #f1c40f;
+    z-index: 100;
+
+}
+
+.fa-sun {
+    color: #f39c12;
+    z-index: 100;
+
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+    z-index: 100;
+
+}
+
+.checkbox:checked+.checkbox-label .ball {
+    transform: translateX(24px);
+    z-index: 100;
+
+}
+/* Estilos para el checkbox al hacer hover */
+.checkbox-label:hover .ball {
+    transform: translateX(24px);
+
+}
+
+.checkbox-label:hover .fa-moon {
+    color: #fff; /* Cambia el color al hacer hover */
+}
+
+.checkbox-label:hover .fa-sun {
+    color: #fff; /* Cambia el color al hacer hover */
+}
+
+.h-divider {
+    margin: auto;
+    margin-top: 80px;
+    width: 80%;
+    position: relative;
+  }
+  
+  .h-divider .shadow {
+    overflow: hidden;
+    height: 20px;
+  }
+  
+  .h-divider .shadow:after {
+    content: '';
+    display: block;
+    margin: -25px auto 0;
+    width: 100%;
+    height: 25px;
+    border-radius: 125px/12px;
+    box-shadow: 0 0 8px black;
+  }
