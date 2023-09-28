@@ -1,5 +1,5 @@
 :root {
-    
+
     --blanco: white;
     --blanco-2: rgba(255, 255, 255, .2);
     --gris: #303030;
@@ -19,7 +19,7 @@
         --negro: #e0e0e0;
         --negro-5: rgba(255, 255, 255, 0.5);
         --negro-7: rgba(255, 255, 255, 0.75);
-        
+
     }
 }
 
@@ -36,19 +36,19 @@ img,
 figure {
     max-width: 100%;
     width: 100%;
-   
+
     display: flex;
     object-fit: cover;
     object-position: center center;
-    
+
 }
 
 a {
     display: block;
     text-decoration: none;
     color: inherit;
-    
-    
+
+
     font-size: inherit;
     cursor: none;
 }
@@ -97,6 +97,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     cursor: none;
+    overflow-x: auto;
+
 
 }
 
@@ -364,7 +366,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 1em;
-    
+
 
 
 }
@@ -513,10 +515,14 @@ body {
 #checkbox {
     opacity: 0;
     position: absolute;
-    top: 10px; /* Ajusta la posición superior según tu preferencia */
-    right: 10px; /* Ajusta la posición derecha según tu preferencia */
-    margin-top: 10px; /* Agrega margen superior según tu preferencia */
-    margin-right: 10px; /* Agrega margen derecho según tu preferencia */
+    top: 10px;
+    /* Ajusta la posición superior según tu preferencia */
+    right: 10px;
+    /* Ajusta la posición derecha según tu preferencia */
+    margin-top: 10px;
+    /* Agrega margen superior según tu preferencia */
+    margin-right: 10px;
+    /* Agrega margen derecho según tu preferencia */
 }
 
 .checkbox-label {
@@ -532,10 +538,14 @@ body {
     align-items: center;
     z-index: 100;
     position: absolute;
-    top: 0; /* Ajusta la posición superior según tu preferencia */
-    right: 0; /* Ajusta la posición derecha según tu preferencia */
-    margin-top: 20px; /* Agrega margen superior según tu preferencia */
-    margin-right: 20px; /* Agrega margen derecho según tu preferencia */
+    top: 0;
+    /* Ajusta la posición superior según tu preferencia */
+    right: 0;
+    /* Ajusta la posición derecha según tu preferencia */
+    margin-top: 20px;
+    /* Agrega margen superior según tu preferencia */
+    margin-right: 20px;
+    /* Agrega margen derecho según tu preferencia */
 }
 
 
@@ -569,6 +579,7 @@ body {
     z-index: 100;
 
 }
+
 /* Estilos para el checkbox al hacer hover */
 .checkbox-label:hover .ball {
     transform: translateX(24px);
@@ -576,11 +587,13 @@ body {
 }
 
 .checkbox-label:hover .fa-moon {
-    color: #fff; /* Cambia el color al hacer hover */
+    color: #fff;
+    /* Cambia el color al hacer hover */
 }
 
 .checkbox-label:hover .fa-sun {
-    color: #fff; /* Cambia el color al hacer hover */
+    color: #fff;
+    /* Cambia el color al hacer hover */
 }
 
 .h-divider {
@@ -588,14 +601,14 @@ body {
     margin-top: 80px;
     width: 80%;
     position: relative;
-  }
-  
-  .h-divider .shadow {
+}
+
+.h-divider .shadow {
     overflow: hidden;
     height: 20px;
-  }
-  
-  .h-divider .shadow:after {
+}
+
+.h-divider .shadow:after {
     content: '';
     display: block;
     margin: -25px auto 0;
@@ -603,4 +616,117 @@ body {
     height: 25px;
     border-radius: 125px/12px;
     box-shadow: 0 0 8px black;
-  }
+}
+
+
+
+/* Estilos para pantallas de hasta 768px de ancho responsive */
+@media screen and (max-width: 768px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden; /* Evitar desplazamiento horizontal */
+    }
+
+    body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: none; /* Oculta el cursor en dispositivos móviles */
+    }
+
+    .checkbox-label {
+        top: 1em;
+        right: 1em;
+    }
+
+    .circulos {
+        animation: none;
+    }
+
+    .seccion {
+        padding: 1em;
+    }
+    .seccion .h2 {   /* El nombre Manuel fdez*/
+        font-size: 18vw; /* Tamaño de fuente relativo a la pantalla */
+        text-align: center;
+       
+    }
+    
+
+    .seccion .grid {
+        max-width: 100%;
+        gap: 0.5em;
+        display: flex;
+        flex-direction: column; /* Mostrar artículos uno por uno en forma de columna */
+        align-items: center;
+    }
+
+    .article {
+        margin: 1em;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.2s;
+    }
+    
+    /* Estilos para la imagen dentro de figure */
+    .article .figure img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .footer {
+        padding: 1em;
+    }
+
+    .footer span {
+        font-size: 0.8em;
+    }
+
+   
+
+    .ul .li:first-child .a {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 6vw;
+        text-align: center;
+        margin: 1em 10px;
+    }
+
+    h2 {  /* El nombre */
+       
+        text-align: center;
+        margin: 0.5em 10px;
+        padding-left: 4%;
+        padding-right: 4%;
+       
+    }
+
+    h3 { /* full stack etc */
+        font-size: 3vw;
+        text-align: center;
+        margin: 0.5em 10px;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    p {
+        font-size: 4vw;
+        text-align: left;
+        margin: 0 20%; /* Utilizar un margen del 5% del ancho del contenedor */
+        margin-bottom: 2em;
+        
+    }
+    .seccion.about p {
+        font-size: 4vw;
+        text-align: left;
+        margin: 0 20%; /* Utilizar un margen del 5% del ancho del contenedor */
+        margin-bottom: 2em;
+    }
+}
