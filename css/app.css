@@ -9,6 +9,7 @@
     --negro-7: rgba(0, 0, 0, 0.75);
     --tipo-titular: 'Playfair Display', serif;
     --tipo-principal: 'Inter', sans-serif;
+    --blancoArticle:white;
 
 }
 
@@ -19,6 +20,8 @@
         --negro: #e0e0e0;
         --negro-5: rgba(255, 255, 255, 0.5);
         --negro-7: rgba(255, 255, 255, 0.75);
+    --blancoArticle:white;
+
 
     }
 }
@@ -389,7 +392,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: var(--blanco);
+    color: var(--blancoArticle);
     font-size: 1.8em;
     font-family: var(--tipo-titular);
     font-style: italic;
@@ -415,18 +418,29 @@ body {
 
 }
 
-.about {}
 
 .about .h2 {
     margin: 0 0 2rem;
 }
-
-.about .p {
+.works .p {
+    max-width: 40rem;
+    margin: 0 0 2rem;
+    font-size: 1.1em;
+    text-align: left;
+}
+.about .p{
     max-width: 40rem;
     margin: 0 0 2rem;
     font-size: 1.1em;
     text-align: left;
 
+}
+.seccion.skills .p {
+    max-width: 40rem;
+    margin: 0 0 2rem;
+    font-size: 1.1em;
+    text-align: left;
+   
 
 }
 
@@ -621,6 +635,10 @@ body {
 
 
 /* Estilos para pantallas de hasta 768px de ancho responsive */
+/* Estilos para pantallas de hasta 768px de ancho responsive */
+/* Estilos para pantallas de hasta 768px de ancho responsive */
+/* Estilos para pantallas de hasta 768px de ancho responsive */
+/* Estilos para pantallas de hasta 768px de ancho responsive */
 @media screen and (max-width: 768px) {
     html, body {
         margin: 0;
@@ -709,24 +727,78 @@ body {
     }
 
     h3 { /* full stack etc */
-        font-size: 3vw;
+        font-size: 2vw;
         text-align: center;
         margin: 0.5em 10px;
-        padding-left: 4%;
-        padding-right: 4%;
+        padding-left: 2%;
+        padding-right: 2%;
     }
 
     p {
         font-size: 4vw;
         text-align: left;
-        margin: 0 20%; /* Utilizar un margen del 5% del ancho del contenedor */
+        margin: 0 10%; /* Utilizar un margen del 5% del ancho del contenedor */
         margin-bottom: 2em;
         
     }
     .seccion.about p {
         font-size: 4vw;
         text-align: left;
-        margin: 0 20%; /* Utilizar un margen del 5% del ancho del contenedor */
+        margin: 0 10%; /* Utilizar un margen del 5% del ancho del contenedor */
         margin-bottom: 2em;
     }
 }
+
+
+
+/* SKILLS ESTILOS */
+.amg-skills {
+    max-width: 960px;
+}
+
+.amg-badge-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.amg-badge {
+    flex: 0 0 calc(15% - 20px); /* El 25% del ancho menos el espacio entre elementos */
+    margin: 10px; /* Espacio entre elementos */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el relleno en el ancho y alto */
+}
+
+/* .amg-badge h3 {
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  color: #FFFFFF;
+} */
+.seccion.skills {
+    text-align: center;
+    padding-top: 0em; /* Ajusta este valor según tus preferencias para el espacio sobre la sección */
+}
+
+
+.amg-badge img {
+     /* Evita que las imágenes se desborden del contenedor */
+    height: auto;
+}
+
+@media only screen and (max-width: 639px) {
+    .amg-badge {
+        flex: 0 0 calc(50% - 20px); /* Dos columnas en pantallas más pequeñas */
+    }
+    .amg-badge img {
+        width: 80%; /* Reduzco el ancho de las imágenes al 80% del contenedor */
+        padding: none;
+        height: auto; /* Mantiene la proporción original */
+    }
+}
+
+
+
+
+
+
