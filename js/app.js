@@ -1,3 +1,4 @@
+
 'use strict'
 
 
@@ -36,6 +37,7 @@ $(document).ready(function(){
 // Cambiar tema
 const themeToggle = document.getElementById('checkbox');
 const root = document.documentElement; // Obtén el elemento :root
+const cursor = document.getElementById('cursor'); // Obtén el elemento con id 'cursor'
 
 themeToggle.addEventListener('click', () => {
     if (root.style.getPropertyValue('--blanco') === 'white') {
@@ -45,15 +47,21 @@ themeToggle.addEventListener('click', () => {
         root.style.setProperty('--negro', '#e0e0e0');
         root.style.setProperty('--negro-5', 'rgba(255, 255, 255, 0.5)');
         root.style.setProperty('--negro-7', 'rgba(255, 255, 255, 0.75)');
+        root.style.setProperty('--cursorColor', 'var(--negro-7)'); // Actualiza --cursorColor
     } else {
         // Si el tema actual es oscuro, cambia a claro
-        root.style.setProperty('--blanco', 'white'); // Cambia el rojo a blanco
+        root.style.setProperty('--blanco', 'white');
         root.style.setProperty('--blanco-2', 'rgba(255,255,255,.2)');
         root.style.setProperty('--negro', 'black');
         root.style.setProperty('--negro-5', 'rgba(0, 0, 0, 0.5)');
         root.style.setProperty('--negro-7', 'rgba(0, 0, 0, 0.75)');
+        root.style.setProperty('--cursorColor', 'var(--blanco)'); // Actualiza --cursorColor
     }
+    
+    // Actualiza el color del cursor
+    cursor.style.backgroundColor = root.style.getPropertyValue('--cursorColor');
 });
+
 
 
 let docTitle = document.title;
