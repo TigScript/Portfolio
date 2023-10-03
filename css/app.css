@@ -1,3 +1,8 @@
+
+
+
+
+
 :root {
 
     --blanco: white;
@@ -9,7 +14,9 @@
     --negro-7: rgba(0, 0, 0, 0.75);
     --tipo-titular: 'Playfair Display', serif;
     --tipo-principal: 'Inter', sans-serif;
-    --blancoArticle:white;
+    --blancoArticle: white;
+    --cursorColor:var(--blanco);
+
 
 }
 
@@ -20,9 +27,8 @@
         --negro: #e0e0e0;
         --negro-5: rgba(255, 255, 255, 0.5);
         --negro-7: rgba(255, 255, 255, 0.75);
-    --blancoArticle:white;
-
-
+        --blancoArticle: white;
+        --cursorColor: var(--negro-7);
     }
 }
 
@@ -223,7 +229,9 @@ body {
     font-size: 1.2em;
     animation: aparecer1 2s ease 1 both;
 
+
 }
+
 
 
 .seccion .ul {
@@ -422,25 +430,28 @@ body {
 .about .h2 {
     margin: 0 0 2rem;
 }
+
 .works .p {
     max-width: 40rem;
     margin: 0 0 2rem;
     font-size: 1.1em;
     text-align: left;
 }
-.about .p{
+
+.about .p {
     max-width: 40rem;
     margin: 0 0 2rem;
     font-size: 1.1em;
     text-align: left;
 
 }
+
 .seccion.skills .p {
     max-width: 40rem;
     margin: 0 0 2rem;
     font-size: 1.1em;
     text-align: left;
-   
+
 
 }
 
@@ -511,7 +522,7 @@ body {
 #cursor {
     width: 5em;
     height: 5em;
-    background-color: var(--blanco);
+    background-color: var(--cursorColor);
     position: fixed;
     top: 0;
     left: 0;
@@ -640,11 +651,14 @@ body {
 /* Estilos para pantallas de hasta 768px de ancho responsive */
 /* Estilos para pantallas de hasta 768px de ancho responsive */
 @media screen and (max-width: 768px) {
-    html, body {
+
+    html,
+    body {
         margin: 0;
         padding: 0;
         height: 100%;
-        overflow-x: hidden; /* Evitar desplazamiento horizontal */
+        overflow-x: hidden;
+        /* Evitar desplazamiento horizontal */
     }
 
     body {
@@ -652,13 +666,11 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        cursor: none; /* Oculta el cursor en dispositivos móviles */
+        cursor: none;
+        /* Oculta el cursor en dispositivos móviles */
     }
 
-    .checkbox-label {
-        top: 1em;
-        right: 1em;
-    }
+
 
     .circulos {
         animation: none;
@@ -667,19 +679,42 @@ body {
     .seccion {
         padding: 1em;
     }
-    .seccion .h2 {   /* El nombre Manuel fdez*/
-        font-size: 18vw; /* Tamaño de fuente relativo a la pantalla */
+
+    .seccion .h2 {
+        /* El nombre Manuel fdez*/
+        font-size: 18vw;
+        /* Tamaño de fuente relativo a la pantalla */
         text-align: center;
-       
+
     }
-    
+
 
     .seccion .grid {
         max-width: 100%;
         gap: 0.5em;
         display: flex;
-        flex-direction: column; /* Mostrar artículos uno por uno en forma de columna */
+        flex-direction: column;
+        /* Mostrar artículos uno por uno en forma de columna */
         align-items: center;
+    }
+
+    .seccion .article {
+        width: 70%;
+        min-height: 20vh;
+        background: lightgoldenrodyellow;
+
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+        overflow: hidden;
+        border-radius: 1em;
+
+
+
     }
 
     .article {
@@ -688,13 +723,16 @@ body {
         border-radius: 10px;
         overflow: hidden;
         transition: transform 0.2s;
+
     }
-    
+
     /* Estilos para la imagen dentro de figure */
     .article .figure img {
         width: 100%;
         height: auto;
-        border-radius: 10px 10px 0 0;
+        /* border-radius: 20px 20px 0 0; */
+        border-radius: 0px 0px 0 0;
+
     }
 
     .footer {
@@ -705,7 +743,7 @@ body {
         font-size: 0.8em;
     }
 
-   
+
 
     .ul .li:first-child .a {
         margin-bottom: 10px;
@@ -717,16 +755,18 @@ body {
         margin: 1em 10px;
     }
 
-    h2 {  /* El nombre */
-       
+    h2 {
+        /* El nombre */
+
         text-align: center;
         margin: 0.5em 10px;
         padding-left: 4%;
         padding-right: 4%;
-       
+
     }
 
-    h3 { /* full stack etc */
+    h3 {
+        /* full stack etc */
         font-size: 2vw;
         text-align: center;
         margin: 0.5em 10px;
@@ -735,17 +775,23 @@ body {
     }
 
     p {
+        width: 60%;
         font-size: 4vw;
         text-align: left;
-        margin: 0 10%; /* Utilizar un margen del 5% del ancho del contenedor */
+        margin: 0 10%;
+        /* Utilizar un margen del 5% del ancho del contenedor */
+        margin-bottom: 2em;
+
+    }
+
+    .seccion.about p {
+        width: 60%;
+        font-size: 4vw;
+        text-align: left;
+        margin: 0 10%;
+        /* Utilizar un margen del 5% del ancho del contenedor */
         margin-bottom: 2em;
         
-    }
-    .seccion.about p {
-        font-size: 4vw;
-        text-align: left;
-        margin: 0 10%; /* Utilizar un margen del 5% del ancho del contenedor */
-        margin-bottom: 2em;
     }
 }
 
@@ -759,14 +805,18 @@ body {
 .amg-badge-collection {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centra los elementos horizontalmente */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
 }
 
 .amg-badge {
-    flex: 0 0 calc(15% - 20px); /* El 25% del ancho menos el espacio entre elementos */
-    margin: 10px; /* Espacio entre elementos */
+    flex: 0 0 calc(15% - 20px);
+    /* El 25% del ancho menos el espacio entre elementos */
+    margin: 10px;
+    /* Espacio entre elementos */
     padding: 20px;
-    box-sizing: border-box; /* Incluye el relleno en el ancho y alto */
+    box-sizing: border-box;
+    /* Incluye el relleno en el ancho y alto */
 }
 
 /* .amg-badge h3 {
@@ -777,28 +827,35 @@ body {
 } */
 .seccion.skills {
     text-align: center;
-    padding-top: 0em; /* Ajusta este valor según tus preferencias para el espacio sobre la sección */
+    padding-top: 0em;
+    /* Ajusta este valor según tus preferencias para el espacio sobre la sección */
 }
 
 
 .amg-badge img {
-     /* Evita que las imágenes se desborden del contenedor */
+    /* Evita que las imágenes se desborden del contenedor */
     height: auto;
 }
 
 @media only screen and (max-width: 639px) {
     .amg-badge {
-        flex: 0 0 calc(50% - 20px); /* Dos columnas en pantallas más pequeñas */
+        flex: 0 0 calc(60% - 130px);
+        /* Dos columnas en pantallas más pequeñas */
+        align-items: center;
+        padding-left: 10%;
+        padding-right: 10%;
+
     }
+
     .amg-badge img {
-        width: 80%; /* Reduzco el ancho de las imágenes al 80% del contenedor */
-        padding: none;
-        height: auto; /* Mantiene la proporción original */
+        width: 160%;
+        /* Reduzco el ancho de las imágenes al 80% del contenedor */
+        margin: 0;
+        align-content: center;
+
+
+        height: auto;
+        /* Mantiene la proporción original */
     }
+
 }
-
-
-
-
-
-
