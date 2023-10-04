@@ -66,7 +66,7 @@ themeToggle.addEventListener('click', () => {
 
 let docTitle = document.title;
 window.addEventListener("blur", () => {
-    document.title = "Hire me 😞";
+    document.title = "Hire me 💲💲💲";
 })
 window.addEventListener("focus", () => {
     document.title = docTitle;
